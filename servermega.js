@@ -81,8 +81,8 @@ io.sockets.on('connection', function(client){
             //fn('msgTransferenciaOk');
 
             //- enviando solicitante y beneficiario a todas las bases conectadas
-            //client.broadcast.emit('msgPersona', {CodOfDestino:msgJson.CodOfDestino, Persona:msgJson.Solicitante});
-            //client.broadcast.emit('msgPersona', {CodOfDestino:msgJson.CodOfDestino, Persona:msgJson.Beneficiario});
+            client.broadcast.emit('msgPersona', {CodOfDestino:msgJson.CodOfDestino, Persona:msgJson.Solicitante});
+            client.broadcast.emit('msgPersona', {CodOfDestino:msgJson.CodOfDestino, Persona:msgJson.Beneficiario});
 
             //- enviando mensaje {transferencia, solicitante, beneficiario)
             //client.broadcast.to(BaseToSocket[msgJson.CodOfDestino]).emit("msgTransferencia", msgJson);
